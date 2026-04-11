@@ -33,6 +33,6 @@ npm install
 npm start
 ```
 
-## Default Ports (2)
+## Default Ports
 - Backend API: http://localhost:5000
 - Frontend:    http://localhost:3000
