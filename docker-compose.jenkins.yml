@@ -1,7 +1,6 @@
 version: '3.8'
 
 services:
-
   mongo-ci:
     image: mongo:6.0
     container_name: quizflow-ci-mongo
@@ -22,7 +21,7 @@ services:
       - ./backend:/app
       - /app/node_modules
     ports:
-      - "5001:5000"
+      - "5000:5000" # FIXED
     environment:
       - PORT=5000
       - MONGO_URI=mongodb://mongo-ci:27017/quizflow
@@ -42,9 +41,9 @@ services:
       - ./frontend:/app
       - /app/node_modules
     ports:
-      - "3001:3000"
+      - "3000:3000" # FIXED
     environment:
-      - REACT_APP_API_URL=http://98.93.199.196:5001
+      - REACT_APP_API_URL=http://98.93.199.196:5000 # FIXED PORT
     command: sh -c "npm install && npm start"
     depends_on:
       - backend-ci
