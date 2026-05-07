@@ -1,5 +1,8 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
+// Production API URL - update after EB is created 
+if (process.env.NODE_ENV ==='production') { axios.defaults.baseURL = 'REPLACE_WITH_EB_URL_LATER'; }
+
 
 const AuthContext = createContext();
 
