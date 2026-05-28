@@ -63,6 +63,16 @@ const connectDB = async () => {
   }
 };
 
+const path = require('path');
+
+// Serve React static files
+app.use(express.static(path.join(__dirname, '../frontend/build')));
+
+// Catch-all: send all unknown routes to React
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
+});
+
 /* ===============================
    START SERVER
 ================================*/
