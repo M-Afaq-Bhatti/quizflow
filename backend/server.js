@@ -63,7 +63,6 @@ const connectDB = async () => {
   }
 };
 
-const path = require('path');
 
 // Serve React static files
 app.use(express.static(path.join(__dirname, '../frontend/build')));
